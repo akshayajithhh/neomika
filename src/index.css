@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italiana&family=Marcellus&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   PURE VANILLA CSS WITH MODERN LUXURY TYPOGRAPHY
+   ========================================================================== */
+
+:root {
+  --bg-parchment: #FAF6EE;
+  --color-ink: #2B1D14;
+  --color-ink-muted: #5A4739;
+  --color-ink-subtle: #8A7565;
+  --color-gold: #B8924B;
+  --color-gold-light: #E0C58A;
+  --color-sage: #586B4C;
+  --color-rose: #BD756B;
+  
+  --shadow-luxury: 0 18px 40px -10px rgba(45, 30, 15, 0.16), 0 4px 12px -2px rgba(45, 30, 15, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: var(--bg-parchment);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: 
+    radial-gradient(circle at 10% 8%, rgba(235, 215, 190, 0.45), transparent 45%),
+    radial-gradient(circle at 90% 18%, rgba(220, 230, 210, 0.4), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(240, 225, 210, 0.35), transparent 50%),
+    radial-gradient(circle at 85% 90%, rgba(230, 210, 185, 0.4), transparent 45%),
+    linear-gradient(180deg, #FAF6EE 0%, #F4ECE0 40%, #FAF6EE 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+/* Scroll Progress Bar at the Top */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #B8924B 0%, #E0C58A 50%, #BD756B 100%);
+  z-index: 100;
+  transition: width 0.1s ease-out;
+}
+
+/* Page Layout Container */
+.page-wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.content-container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+@media (min-width: 640px) {
+  .content-container {
+    max-width: 540px;
+  }
+}
+
+/* Typography Classes */
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-editorial {
+  font-family: 'Italiana', serif;
+}
+
+.font-heading {
+  font-family: 'Marcellus', serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-label {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Scroll Reveal Base Class */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Luxury Glass Cards */
+.luxury-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(190, 160, 130, 0.28);
+  border-radius: 20px;
+  padding: 1.6rem;
+  box-shadow: var(--shadow-luxury);
+  position: relative;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px -12px rgba(45, 30, 15, 0.2);
+}
+
+@media (min-width: 640px) {
+  .luxury-card {
+    padding: 2rem;
+    border-radius: 24px;
+  }
+}
+
+/* Luxury Buttons */
+.btn-gold {
+  background: linear-gradient(135deg, #be9a58 0%, #d8b77a 50%, #ab8542 100%);
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding: 0.7rem 1.4rem;
+  box-shadow: 0 4px 14px rgba(170, 130, 60, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(170, 130, 60, 0.35);
+  background: linear-gradient(135deg, #c7a462 0%, #e0c286 50%, #b8914b 100%);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-ink);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding: 0.65rem 1.15rem;
+  border: 1px solid rgba(160, 130, 100, 0.28);
+  box-shadow: 0 2px 6px rgba(60, 40, 20, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  transform: translateY(-2px) scale(1.02);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 16px rgba(18, 140, 126, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(18, 140, 126, 0.4);
+}
+
+/* Hero Invitation Card Frame */
+.invitation-frame {
+  position: relative;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 18px;
+  box-shadow: var(--shadow-luxury);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  user-select: none;
+}
+
+.invitation-frame:hover {
+  transform: scale(1.02) rotate(-0.5deg);
+  box-shadow: 0 24px 50px -10px rgba(45, 30, 15, 0.25);
+}
+
+.invitation-img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f7efe4;
+}
+
+.invitation-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button Group Row */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+/* Countdown Grid */
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(210, 185, 155, 0.45);
+  border-radius: 14px;
+  padding: 0.85rem 0.25rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(50, 35, 20, 0.04);
+  transition: transform 0.25s ease;
+}
+
+.countdown-box:hover {
+  transform: translateY(-3px);
+}
+
+.countdown-num {
+  font-family: 'Marcellus', serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+@media (min-width: 640px) {
+  .countdown-num {
+    font-size: 2.3rem;
+  }
+}
+
+.countdown-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-ink-subtle);
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+}
+
+/* Event Itinerary Grid */
+.event-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .event-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.event-info-box {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(210, 185, 155, 0.4);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+/* Lightbox Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: -2.75rem;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+/* Music Control Pill */
+.music-pill {
+  position: fixed;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(184, 146, 75, 0.3);
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(60, 40, 20, 0.08);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.music-pill:hover {
+  transform: scale(1.05);
+}
