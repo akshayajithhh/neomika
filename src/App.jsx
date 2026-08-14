@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import MusicController from './components/MusicController';
 import FloatingDecorations from './components/FloatingDecorations';
 import InvitationHero from './components/InvitationHero';
 import Countdown from './components/Countdown';
@@ -57,9 +56,6 @@ export default function App() {
 
       {/* Background Soft Ambient Light Glows */}
       <FloatingDecorations />
-
-      {/* Floating Audio Melody Control */}
-      <MusicController />
 
       {/* 1. Hero Invitation Card Centerpiece */}
       <InvitationHero />
